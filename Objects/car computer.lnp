@@ -1,0 +1,4 @@
+".\Objects\carcomputer.obj",
+".\Objects\hwapi.obj" 
+TO ".\Objects\car computer" 
+PRINT(".\Listings\car computer.m51") RAMSIZE(256) 

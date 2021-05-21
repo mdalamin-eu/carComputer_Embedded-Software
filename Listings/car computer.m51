@@ -1,0 +1,174 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/24/2021  13:09:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\carcomputer.obj, .\Objects\hwapi.obj TO .\Objects\car computer PRINT (.\Listings\c
+>> ar computer.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\carcomputer.obj (CARCOMPUTER)
+  .\Objects\hwapi.obj (HWAPI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\car computer (CARCOMPUTER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0063H     UNIT         ?PR?MAIN?CARCOMPUTER
+            CODE    0863H     000CH     UNIT         ?C_C51STARTUP
+            CODE    086FH     000BH     UNIT         ?PR?ISDOOROPEN?HWAPI
+            CODE    087AH     000BH     UNIT         ?PR?ISKEYINPLACE?HWAPI
+            CODE    0885H     000BH     UNIT         ?PR?ISENGINERUNNING?HWAPI
+            CODE    0890H     000BH     UNIT         ?PR?ISLIGHTSON?HWAPI
+            CODE    089BH     0003H     UNIT         ?PR?SETLIGHTALARMON?HWAPI
+            CODE    089EH     0003H     UNIT         ?PR?SETLIGHTALARMOFF?HWAPI
+            CODE    08A1H     0003H     UNIT         ?PR?SETKEYALARMON?HWAPI
+            CODE    08A4H     0003H     UNIT         ?PR?SETKEYALARMOFF?HWAPI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\car computer (CARCOMPUTER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?CARCOMPUTER
+
+?PR?MAIN?CARCOMPUTER
+  +--> ?PR?ISDOOROPEN?HWAPI
+  +--> ?PR?ISLIGHTSON?HWAPI
+  +--> ?PR?ISENGINERUNNING?HWAPI
+  +--> ?PR?SETLIGHTALARMON?HWAPI
+  +--> ?PR?SETKEYALARMOFF?HWAPI
+  +--> ?PR?ISKEYINPLACE?HWAPI
+  +--> ?PR?SETLIGHTALARMOFF?HWAPI
+  +--> ?PR?SETKEYALARMON?HWAPI
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/24/2021  13:09:29  PAGE 2
+
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\car computer (CARCOMPUTER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CARCOMPUTER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0800H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         10
+  C:0815H         LINE#         11
+  C:0818H         LINE#         12
+  C:081BH         LINE#         13
+  C:081DH         LINE#         14
+  C:0832H         LINE#         15
+  C:0832H         LINE#         16
+  C:0835H         LINE#         17
+  C:0835H         LINE#         19
+  C:0853H         LINE#         21
+  C:0856H         LINE#         23
+  C:0859H         LINE#         26
+  C:085BH         LINE#         27
+  C:085BH         LINE#         29
+  C:085EH         LINE#         31
+  C:0861H         LINE#         34
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        CARCOMPUTER
+
+  -------         MODULE        HWAPI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:08A4H         PUBLIC        setKeyAlarmOff
+  C:086FH         PUBLIC        isDoorOpen
+  C:0890H         PUBLIC        isLightsOn
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0885H         PUBLIC        isEngineRunning
+  C:08A1H         PUBLIC        setKeyAlarmOn
+  C:087AH         PUBLIC        isKeyInPlace
+  D:0098H         PUBLIC        SCON
+  B:0080H.0       PUBLIC        DOOR
+  D:0088H         PUBLIC        TCON
+  B:0080H.1       PUBLIC        ENGINE
+  B:00B0H.7       PUBLIC        KEY_ALARM
+  B:00B0H.6       PUBLIC        LIGHT_ALARM
+  C:089EH         PUBLIC        setLightAlarmOff
+  D:00C8H         PUBLIC        T2CON
+  B:0080H.2       PUBLIC        KEY
+  C:089BH         PUBLIC        setLightAlarmOn
+  B:0080H.3       PUBLIC        LIGHT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/24/2021  13:09:29  PAGE 3
+
+
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          ISDOOROPEN
+  C:086FH         LINE#         19
+  C:086FH         LINE#         21
+  C:0879H         LINE#         22
+  -------         ENDPROC       ISDOOROPEN
+  -------         PROC          ISKEYINPLACE
+  C:087AH         LINE#         23
+  C:087AH         LINE#         25
+  C:0884H         LINE#         27
+  -------         ENDPROC       ISKEYINPLACE
+  -------         PROC          ISENGINERUNNING
+  C:0885H         LINE#         28
+  C:0885H         LINE#         30
+  C:088FH         LINE#         32
+  -------         ENDPROC       ISENGINERUNNING
+  -------         PROC          ISLIGHTSON
+  C:0890H         LINE#         33
+  C:0890H         LINE#         34
+  C:089AH         LINE#         36
+  -------         ENDPROC       ISLIGHTSON
+  -------         PROC          SETLIGHTALARMON
+  C:089BH         LINE#         38
+  C:089BH         LINE#         39
+  C:089DH         LINE#         41
+  -------         ENDPROC       SETLIGHTALARMON
+  -------         PROC          SETLIGHTALARMOFF
+  C:089EH         LINE#         42
+  C:089EH         LINE#         43
+  C:089EH         LINE#         44
+  C:08A0H         LINE#         47
+  -------         ENDPROC       SETLIGHTALARMOFF
+  -------         PROC          SETKEYALARMON
+  C:08A1H         LINE#         50
+  C:08A1H         LINE#         52
+  C:08A3H         LINE#         53
+  -------         ENDPROC       SETKEYALARMON
+  -------         PROC          SETKEYALARMOFF
+  C:08A4H         LINE#         54
+  C:08A4H         LINE#         56
+  C:08A6H         LINE#         58
+  -------         ENDPROC       SETKEYALARMOFF
+  -------         ENDMOD        HWAPI
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 009BH BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=170
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
